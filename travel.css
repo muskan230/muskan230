@@ -1,0 +1,594 @@
+*{
+    margin:0;
+    padding: 0;
+    text-decoration: none;
+}
+body{
+    height: 200vh;
+    font-family: 'Poppins', sans-serif;
+    scroll-behavior: smooth;
+
+}
+header{
+    background-color: rgb(65, 63, 63);
+    display: flex;
+    justify-content: space-evenly;
+    align-items:center;
+    color:white;
+    position: fixed;
+    top:0;
+    left:0;
+    right:0;
+    font-size: 95%;
+    z-index: 1;
+    border-bottom: 1px solid grey;
+}
+header a{
+    color:white;
+}
+header a:hover{
+    color:orange;
+}
+.logo{
+    font-size: 2.5em;
+}
+.logo span{
+    color:orange;
+}
+header nav{
+    font-size: 1.2em;
+    display: flex;
+    text-transform: uppercase;
+    justify-content: space-evenly;
+    align-items: center;
+}
+nav a{
+    margin: 1em;
+}
+.icon{
+    font-size: 1.5em;
+    cursor: pointer;
+}
+.icon i{
+    margin: .5em;
+}
+.search-bar-container{
+
+    position: absolute;
+    top:100%;
+    left:0;
+    right: 0;
+    width: 100%;
+    background-color:rgb(65, 63, 63);
+    display: flex;
+    justify-content:center;
+    align-items: center;
+    border-top: 1px solid grey;
+    clip-path: polygon(0 0,100% 0,100% 0,0 0);
+    z-index: 1001;
+    transition: all .2s;
+}
+ .active{
+    clip-path: polygon(0 0,100% 0,100% 100%,0 100%);
+}
+#search-bar{
+    width:80%;
+    padding:.5em;
+    font-size: 1.2em;
+    margin: .5em;
+}
+.search-bar-container label{
+    font-size: 1.6em;
+    cursor: pointer;
+    margin-left: 1em;
+}
+
+/* login form */
+.login-form{
+    position: fixed;
+    top:-120%;
+    left:0;
+    right:0;
+    min-height: 100vh;
+    background-color: rgba(0, 0, 0, 0.76);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all .2s;
+    z-index: 2;
+}
+.activeform{
+    position: fixed;
+    top:0;
+}
+.login-form form{
+    background-color: white;
+    padding: 1.5em;
+    width:25rem;
+    border-radius: .5rem;
+    color:rgb(36, 35, 35);
+}
+.form-center{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.login-form form h3{
+    font-size: 2.4em;
+}
+.login-form form .box{
+    margin:.8em;
+    width:100%;
+    padding: .8em;
+    font-size: 1em;
+    text-transform:capitalize;
+}
+.btn{
+    font-size: 1.3rem;
+    padding: .5em;
+    background-color: orange;
+    border-color: orange;
+    outline: none;
+    color:white;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+ .btn:hover{
+    color:orange;
+    background-color: white;
+    border :1px solid orange;
+    
+}
+.login-form form .btn{
+    width: 107%;
+    display: block;
+    margin: 0;
+}
+.login-form form .lbl{
+    font-size: 1.1em;
+    text-transform: uppercase;
+    justify-content: left;
+    margin-left: .5em;
+}
+.login-form form #remember{
+  width:1.2em;
+  height: 1.2em;
+  margin-top: 1em;
+}
+.login-form form p{
+    margin-top: .5em;
+    text-transform: uppercase;
+}
+.login-form form p a{
+    color:orange;
+
+}
+.form-cancel i{
+    color:white;
+    font-size: 4em;
+    position: absolute;
+    right:.5em;
+    top:.5em;
+    cursor: pointer;
+}
+.menu{
+    font-size: 1.8em;
+    display: none;
+  padding-top: .2em;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* home page */
+
+.home {
+    width: 100%;
+    min-height:100vh;
+    z-index: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-flow: column;
+    position: relative;
+    text-transform: uppercase;
+
+}
+.home .content{
+    text-align: center;
+}
+
+.home .content h3{
+    font-size: 3.8rem;
+    text-shadow: 1px 1px 3px rgb(32, 31, 31);
+    letter-spacing: 2px;
+    color:white;
+}
+.home .content p{
+    font-size:1.8rem;
+    color:white;
+    text-shadow: 1px 1px 3px rgb(14, 13, 13);
+    margin-bottom: .8em;
+}
+.home  .video-container video{
+    position: absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:100vh;
+    z-index: -5;
+    object-fit: cover;
+}
+.home .controls{
+    border-radius: 5rem; 
+    padding: .7em;
+    background-color: rgba(48, 46, 46, 0.856);
+    position: relative;
+    top:9rem;
+ 
+}
+.home .controls .vid-btn{
+    width:1.5rem;
+    height: 1.5rem;
+    display: inline-block;
+    border-radius: 50%;
+    margin: .8px;
+     background-color: white;
+     cursor: pointer;
+}
+.home .controls  .active{
+    background-color: orange;
+}
+
+/* booking part */
+
+.bookiheading {
+   text-align: center;
+   margin-top: 1em;
+}
+.bookiheading span{
+background-color: rgb(245, 220, 169);
+color:orange;
+padding: .1em .3em;
+font-size:1.8em;
+text-align: center;
+font-weight:900;
+text-transform: uppercase;
+text-shadow: 2px 2px 2px rgb(238, 184, 83);
+}
+
+.bookiheading .space{
+    background-color: transparent;
+    font-size: .9em;
+}
+.book .row{
+    display: flex;
+    flex-wrap: wrap;
+    /* gap:1.5em; */
+    align-items: center;
+    margin: 0em 5em;
+}
+.book .image{
+    flex:1 1 25em;
+}
+.book .image img{
+    width: 100%;
+    height:100vh;
+}
+.book form{
+    flex: 1 1 20em;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 1.5px 1px 5px rgb(158, 154, 154);
+    margin: 1em;
+    padding: 1rem;
+    width: 2em;
+    height: 70vh;
+    padding: 2em;
+}
+.book form input{
+    width:90%;
+    padding: .8em;
+    border: none;
+    box-shadow: 1px 1px 4px rgb(165, 162, 162);
+   
+}
+.book form input::placeholder{
+    /* text-transform: capitalize; */
+    font-size: 1.1em;
+}
+
+.book form h3{
+    font-size: 1.1em;
+    text-transform: capitalize;
+    margin-bottom: .5em;
+    letter-spacing: 1px;
+}
+
+.book form .inutbox , .bkbtn{
+    margin: 1em;
+}
+
+/* packages */
+
+.package{
+    display: flex;
+    flex-wrap: wrap;
+    gap:3rem 2rem;
+   justify-content: center;
+   margin: 3em 5em;
+}
+
+.package .box-container{
+    flex: 1 1 22rem;
+   box-shadow: 1px 1px 5px grey;
+   border-radius: .5rem;
+   overflow: hidden;
+}
+.package .box-container .content{
+    padding: 1em;
+}
+.package .box-container .content h3{
+    text-transform: capitalize;
+}
+.package .box-container .content .pbtn{
+    font-size: 1.1em;
+}
+.package .box-container .content p{
+    color: black;
+}
+.package .box-container .content .price span{
+    text-decoration:line-through;
+}
+
+.package .box-container .content i{
+    color: orange;
+}
+
+.package .box-container img{
+    width: 100%;
+    height:22rem;
+    object-fit: cover;
+}
+
+/* services */
+.servicecontainer{
+    display: flex;
+    gap:2em;
+    flex-wrap: wrap;
+    margin: 3em 5em;
+}
+.servicecontainer .box{
+    flex:1 1 22em;
+    text-align: center;
+    padding: 2em;
+}
+.servicecontainer .box:hover{
+    box-shadow: 1px 1px 3px rgb(150, 150, 150);
+}
+.servicecontainer .box i{
+    font-size: 3em;
+    color:orange;
+}
+.servicecontainer .box h3{
+   font-size: 1.8em;
+   text-transform: capitalize;
+   color:rgb(39, 39, 39);
+}
+.servicecontainer .box p{
+    color:rgb(27, 27, 27);
+ }
+
+/* gallery */
+.gallerybox{
+    display: flex;
+    gap:2em;
+    flex-wrap: wrap;
+    margin:2em 5em;
+}
+.gallerybox .box{
+    flex:1 1 20em;
+    overflow: hidden;
+    box-shadow: 0 1rem 2rem rgba(95, 95, 95, 0.397);
+    height: 20em; 
+    position: relative;  
+    border-radius: .5rem;
+
+}
+.gallerybox .box .content{
+    position: absolute;
+    top:-200%;
+    left:0;
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.637);
+    width:100%;
+    height:100%;
+    padding: 4em 0em;
+    transition: all .8s;
+}
+.gallerybox .box:hover .content{
+    top:0;
+}
+.gallerybox .box .content h3{
+    font-size: 2em;
+    font-weight: bolder;
+    color:orange;
+}
+.gallerybox .box .content p{
+    font-size: 1em;
+   color:white;
+   margin-bottom: 2em;
+}
+.gallerybox .box .content .btn{
+    font-size: 1em;
+   
+}
+
+/* review */
+.slider .box{
+    text-align: center;
+    padding: 2em;
+    border-radius: .5rem;
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.411);
+    margin: 2em;
+}
+.slider .box i{
+    color:orange;
+}
+.slider .box h3{
+    font-size: 2em;
+    text-transform: capitalize;
+}
+.slider .box p{
+    color:black;
+}
+.slider-wrapper{
+    padding: 3em;
+}
+.slider .box img{
+   border-radius: 50%;
+}
+.slider-wrapper{
+    display: flex;
+    flex-wrap: wrap;
+    gap:2em;
+}
+.slider-wrapper .box{
+    flex:1 1 15em;
+}
+
+/* contact */
+
+.contactbox .row{
+    display: flex;
+    gap:2em;
+    flex-wrap: wrap;
+    align-items: center;
+}
+.contactbox .image{
+    flex:1 1 30rem;
+}
+.contactbox .image img{
+    width:100%;
+    height:70vh;
+}
+.contactbox form{
+    flex:1 1 30rem;
+    margin: 5em;
+    box-shadow: .5px .5px 5px gray;
+    padding: 2em;
+}
+.contactbox form .inputbox{
+    display: flex;
+    flex-wrap: wrap;
+   justify-content: space-between;
+}
+.contactbox form .inputbox input , textarea{
+    width:40%;  
+    padding: .8em;
+    margin: 1em 0em;
+    font-size: 1em;
+    border:none;
+    background-color: rgb(248, 248, 248);
+    color:grey;
+    box-shadow: 1px 1px 2px rgb(224, 224, 224);
+}
+.contactbox form textarea{
+    width:100%;
+
+}
+.contactbox form textarea::placeholder{
+   font-size: 1.4em;
+   
+}
+
+/* footer */
+.footer{
+    background-color: rgb(65, 63, 63);
+    padding: 2em;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    text-transform: capitalize;    
+}
+.footer .footer-box{
+    display: flex;
+    flex-wrap: wrap;
+    gap:5rem;
+}
+.footer .footer-box a, .footer-box p{
+    display: block;
+    color:white;
+    max-width:20em;
+    padding: .1em 0em;
+
+}
+.footer .footer-box h3{
+    color:white;
+    font-size: 1.7rem;
+    padding: .5em 0em;
+}
+
+.footer .credit{
+    font-size: 1.2em;
+    color:white;
+    border-top: 1px solid grey;
+    width: 100%;
+    text-align: center;
+    padding-top: .5em;
+    margin-top: 1.2em;
+    margin-bottom: 0px;
+}
+.footer .credit span{
+    color:orange;
+}
+.footer a:hover{
+    color:orange;
+}
+/* media query */
+
+@media (min-width:900px) and (max-width:1100px){
+    header{
+        font-size: 80%;
+    }
+    
+}
+@media screen and (max-width:900px){
+   
+    header nav{
+        position: absolute;
+        top:100%;
+        left:0;
+        right:0;
+        display: flex;
+        flex-direction: column;
+        text-transform: uppercase;
+        background-color:rgb(36, 35, 35); 
+        padding-top: 2em;
+        clip-path: polygon(0 0,0 100%,0 100%,0 0);
+        /* transition: all .5s; */
+    }
+    .contactbox form .inputbox input , textarea{    
+        width:100%;  
+    }
+    .activemenu{
+        clip-path: polygon(0 0,100% 0,100% 100%,0 100%);
+    }
+    .menu{      
+        display: initial;
+    }
+   
+    .home .content h3{
+        font-size: 3rem;
+    }
+    .home .content p{
+        font-size:1.5rem;
+        margin: 1em;
+    }
+    .btn{
+        font-size: 1.2rem;
+        padding: .5em;
+        margin-top: 2em;
+       
+    }
+}
